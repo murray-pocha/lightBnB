@@ -31,6 +31,7 @@ const getUserWithEmail = function(email) {
   return pool
     .query(`SELECT * FROM users WHERE email = $1;`, [email.toLowerCase()])
     .then((result) => {
+      console.log("Database Query Result:", result.rows[0]);
       if (result.rows.length === 0) {
         return null; // if no user found
       }
@@ -40,6 +41,10 @@ const getUserWithEmail = function(email) {
       console.error('Query error:', err.stack);
     });
 };
+
+getUserWithEmail('testuser@example.com')
+  .then((user) => console.log(user))
+  .catch((err) => console.error(err));
 
 /**
  * Get a single user from the database given their id.
@@ -64,19 +69,23 @@ const getUserWithId = function(id) {
  * @return {Promise<{}>} A promise to the user.
  */
 
+const bcrypt = require("bcrypt");
+
 const addUser = function(user) {
+  const hashedPassword = bcrypt.hashSync(user.password, 12); // Hash the password
   const query = `
-INSERT INTO users (name, email, password)
-VALUES ($1, $2, $3)
-RETURNING *;
-`;
-  const values = [user.name, user.email, user.password];
+    INSERT INTO users (name, email, password)
+    VALUES ($1, $2, $3)
+    RETURNING *;
+  `;
+  const values = [user.name, user.email, hashedPassword]; // Use the hashed password
 
   return pool
     .query(query, values)
-    .then((result) => result.rows[0]) //return the inserted user
+    .then((result) => result.rows[0]) // Return the inserted user
     .catch((err) => {
-      console.error('Error adding user:', err);
+      console.error("Error adding user:", err);
+      throw err; // Rethrow the error for further handling
     });
 };
 
@@ -145,6 +154,18 @@ const addProperty = function(property) {
   return Promise.resolve(property);
 };
 
+
+const newUser = {
+  name: "Test User",
+  email: "testuser@example.com",
+  password: "password123" // Ensure these values are unique
+};
+
+addUser(newUser)
+  .then(user => {
+    console.log("User added:", user);
+  })
+  .catch(err => console.error("Error adding user:", err));
 
 
 module.exports = {
