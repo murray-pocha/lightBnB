@@ -55,10 +55,14 @@ A simple multi-page Airbnb close that uses a server-side Javascript to display t
 * `styles` contains all of the sass files. 
 * `server.js` is the entry point to the application. This connects the routes to the database.
 
-![Alt text] (/home/labber/lighthouse/lightBnB/screenshots/Screenshot 2025-01-04 170626.png)
+## Screenshots
 
-![Alt text] (/home/labber/lighthouse/lightBnB/screenshots/Screenshot 2025-01-04 170705.png)
+### Home Page
+![Alt text](screenshots/Screenshot-2025-01-04-170626.png "Home Page")
 
-![Alt text] (/home/labber/lighthouse/lightBnB/screenshots/Screenshot 2025-01-04 170726.png)
+### Search Results
+![Alt text](screenshots/Screenshot-2025-01-04-170705.png "Search Results")
 
+### Property Listing
+![Alt text](screenshots/Screenshot-2025-01-04-170726.png "Property Listing")
 
