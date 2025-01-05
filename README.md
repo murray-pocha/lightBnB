@@ -58,11 +58,10 @@ A simple multi-page Airbnb close that uses a server-side Javascript to display t
 ## Screenshots
 
 ### Home Page
-![Alt text](screenshots/Screenshot-2025-01-04-170626.png "Home Page")
+![Home Page](screenshots/Screenshot-2025-01-04-170626.png)
 
 ### Search Results
-![Alt text](screenshots/Screenshot-2025-01-04-170705.png "Search Results")
+![Search Results](screenshots/Screenshot-2025-01-04-170705.png)
 
 ### Property Listing
-![Alt text](screenshots/Screenshot-2025-01-04-170726.png "Property Listing")
-
+![Property Listing](screenshots/Screenshot-2025-01-04-170726.png)
