@@ -23,24 +23,19 @@ router.post("/", (req, res) => {
 
 // Log a user in
 router.post("/login", (req, res) => {
-  console.log("Login Input Email:", req.body.email);
-  console.log("Login Input Password:", req.body.password);
   const email = req.body.email;
   const password = req.body.password;
 
   database.getUserWithEmail(email).then((user) => {
-    console.log("User Retrieved:", user);
     if (!user) {
       return res.send({ error: "no user with that id" });
     }
-    console.log("Input Password:", password);
-    console.log("Hashed Password:", user.password);
+    
 
     if (!bcrypt.compareSync(password, user.password)) {
-      console.log("Password comparison result: false");
+    
       return res.send({ error: "error" });
-    } else {
-      console.log("Password comparison result: true");
+      
     }
 
     req.session.userId = user.id;

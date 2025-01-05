@@ -31,7 +31,6 @@ const getUserWithEmail = function(email) {
   return pool
     .query(`SELECT * FROM users WHERE email = $1;`, [email.toLowerCase()])
     .then((result) => {
-      console.log("Database Query Result:", result.rows[0]);
       if (result.rows.length === 0) {
         return null; // if no user found
       }
@@ -100,7 +99,6 @@ const addUser = function(user) {
  // a promise to the reservation
 
 const getAllReservations = function (guest_id, limit = 10) {
-  console.log("getAllReservations called with guest_id:", guest_id);
 
   const query = `
   SELECT reservations.*, properties.*, COALESCE(AVG(property_reviews.rating), 0) as average_rating
@@ -114,14 +112,10 @@ const getAllReservations = function (guest_id, limit = 10) {
   `;
 
   const values = [guest_id, limit];
-  console.log("Query being executed:", query);
-  console.log("Values passed:", values);
 
   return pool
   .query(query, values)
   .then((result) => {
-    console.log("getAllReservations Result:", result.rows);
-    console.log("Query Result:", result.rows);
     return result.rows
   })
 
@@ -260,8 +254,3 @@ module.exports = {
   getAllProperties,
   addProperty,
 };
-
-pool
-  .query('SELECT * FROM reservations WHERE guest_id = 1029;')
-  .then((res) => console.log('Direct Test Query Result:', res.rows))
-  .catch((err) => console.error('Direct Test Query Error:', err.stack));
