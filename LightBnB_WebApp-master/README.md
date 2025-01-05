@@ -1,4 +1,5 @@
 # LightBnB
+A simple multi-page Airbnb close that uses a server-side Javascript to display the information from queries to web pages via SQL queries.
 
 ## Project Structure
 
@@ -53,3 +54,11 @@
 * `routes` contains the router files which are responsible for any HTTP requests to `/users/something` or `/api/something`. 
 * `styles` contains all of the sass files. 
 * `server.js` is the entry point to the application. This connects the routes to the database.
+
+![Alt text] (/home/labber/lighthouse/lightBnB/screenshots/Screenshot 2025-01-04 170626.png)
+
+![Alt text] (/home/labber/lighthouse/lightBnB/screenshots/Screenshot 2025-01-04 170705.png)
+
+![Alt text] (/home/labber/lighthouse/lightBnB/screenshots/Screenshot 2025-01-04 170726.png)
+
+
