@@ -58,10 +58,12 @@ A simple multi-page Airbnb close that uses a server-side Javascript to display t
 ## Screenshots
 
 ### Home Page
-![Home Page](Screenshots/Screenshot-2025-01-04-170626.png)
+![Home Page](https://github.com/murray-pocha/lightBnB/blob/main/screenshots/Screenshot-2025-01-04-170626.png?raw=true)
 
 ### Search Results
-![Search Results](Screenshots/Screenshot-2025-01-04-170705.png)
+![Search Results](https://github.com/murray-pocha/lightBnB/blob/main/screenshots/Screenshot-2025-01-04-170705.png)
 
 ### Property Listing
-![Property Listing](Screenshots/Screenshot-2025-01-04-170726.png)
+![Property Listing](https://github.com/murray-pocha/lightBnB/blob/main/screenshots/Screenshot-2025-01-04-170726.png)
+
+
